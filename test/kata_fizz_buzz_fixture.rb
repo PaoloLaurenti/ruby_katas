@@ -4,17 +4,17 @@ require_relative '../app/kata_fizz_buzz'
 
 class KataFizzBuzzFixture < MiniTest::Test
 
-	def test_should_print_a_sequence_starting_with_1_and_2
+	def setup
 		kataFizzBuzz = KataFizzBuzz.new
-		output = capture_stdout { kataFizzBuzz.printSequence }
-		assert_match /^1, 2.*/, output
+		@output = capture_stdout { kataFizzBuzz.printSequence }
 	end
 
-	#Print on STDOUT a sequence of numbers from 1 to 3 with 'Fizz' instead of 3
+	def test_should_print_a_sequence_starting_with_1_and_2
+		assert_match /^1, 2.*/, @output
+	end
+
 	def test_should_print_Fizz_instead_of_3
-		kataFizzBuzz = KataFizzBuzz.new
-		output = capture_stdout { kataFizzBuzz.printSequence }
-		assert_match /^1, 2, Fizz.*/, output
+		assert_match /^1, 2, Fizz.*/, @output
 	end
 
 	private
