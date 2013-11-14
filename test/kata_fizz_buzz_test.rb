@@ -23,7 +23,7 @@ class KataFizzBuzzTest < MiniTest::Test
 	end
 
 	def test_should_print_numbers_from_1_to_100
-		counter = method do |item, index|
+		counter = iterate_on_output do |item, index|
 			assert item.to_i == index || @allowedWords.include?(item)
 		end
 
@@ -31,20 +31,20 @@ class KataFizzBuzzTest < MiniTest::Test
 	end
 
 	def test_should_print_Fizz_instead_every_number_multiple_of_3
-		method do |item, index|
-			assert_match /^Fizz(Buzz)?$/, item, "Problem on index #{index}" if Helper.isDivisible(index, 3)
+		iterate_on_output do |item, index|
+			assert_item_is_Fizz(index, item) if Helper.isDivisible(index, 3)
 		end
 	end
 
 	def test_should_print_Buzz_instead_every_number_multiple_of_5
-		method do |item, index|
-			assert_match /^(Fizz)?Buzz$/, item, "Problem on index #{index}" if Helper.isDivisible(index, 5)
+		iterate_on_output do |item, index|
+			assert_item_is_Buzz(index, item) if Helper.isDivisible(index, 5)
 		end
 	end
 
 	def test_should_print_FizzBuzz_instead_of_every_number_multiple_of_3_and_5
-		method do |item, index|
-			assert_equal 'FizzBuzz', item, "Problem on index #{index}" if Helper.isDivisibleByManyDivisors(index, 3, 5)
+		iterate_on_output do |item, index|
+			assert_item_is_FizzBuzz(index, item) if Helper.isDivisibleByManyDivisors(index, 3, 5)
 		end
 	end
 
@@ -61,7 +61,7 @@ class KataFizzBuzzTest < MiniTest::Test
 	  fake.string
 	end
 
-	def method
+	def iterate_on_output
 		items = get_output_items()
 		index = 1
 		items.each do |item|
@@ -74,5 +74,17 @@ class KataFizzBuzzTest < MiniTest::Test
 
 	def get_output_items
 		@output.split(', ')
+	end
+
+	def assert_item_is_Fizz(index, item)
+		assert_match /^Fizz(Buzz)?$/, item, "Problem on index #{index}"
+	end
+
+	def assert_item_is_Buzz(index, item)
+		assert_match /^(Fizz)?Buzz$/, item, "Problem on index #{index}"
+	end
+
+	def assert_item_is_FizzBuzz(index, item)
+		assert_equal 'FizzBuzz', item, "Problem on index #{index}"
 	end
 end
