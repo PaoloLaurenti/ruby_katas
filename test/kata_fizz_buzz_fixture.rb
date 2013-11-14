@@ -17,6 +17,11 @@ class KataFizzBuzzFixture < MiniTest::Test
 		assert_match /^1, 2, Fizz.*/, @output
 	end
 
+	#Print on STDOUT a sequence of numbers from 1 to 5 with 'Buzz' instead of 5
+	def test_should_print_Buzz_instead_of_5
+		assert_match /^1, 2, Fizz, 4, Buzz.*/, @output
+	end
+
 	private
 
 	def capture_stdout(&block)
