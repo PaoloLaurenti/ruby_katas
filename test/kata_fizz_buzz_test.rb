@@ -23,14 +23,17 @@ class KataFizzBuzzTest < MiniTest::Test
 	end
 
 	def test_should_print_numbers_from_1_to_100
-		items = @output.split(', ')
-		counter = 1
-		items.each do |item|
-			break unless (item.to_i == counter || @allowedWords.include?(item))
-			counter += 1
+		counter = method do |item, index|
+			assert item.to_i == index || @allowedWords.include?(item)
 		end
 
 		assert_equal 100, counter, 'The sequence from 1 to 100 is not respected'
+	end
+
+	def test_should_print_Fizz_instead_every_number_multiple_of_3
+		method do |item, index|
+			assert_equal 'Fizz', item if index % 3 == 0
+		end
 	end
 
 	private
@@ -44,5 +47,20 @@ class KataFizzBuzzTest < MiniTest::Test
 	    $stdout = original_stdout
 	  end
 	  fake.string
+	end
+
+	def method
+		items = get_output_items()
+		index = 1
+		items.each do |item|
+			yield(item, index)
+			index += 1
+		end
+
+		index
+	end
+
+	def get_output_items
+		@output.split(', ')
 	end
 end
