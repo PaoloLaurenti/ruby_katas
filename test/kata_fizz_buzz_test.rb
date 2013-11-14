@@ -32,7 +32,19 @@ class KataFizzBuzzTest < MiniTest::Test
 
 	def test_should_print_Fizz_instead_every_number_multiple_of_3
 		method do |item, index|
-			assert_equal 'Fizz', item if index % 3 == 0
+			assert_match /^Fizz(Buzz)?$/, item, "Problem on index #{index}" if Helper.isDivisible(index, 3)
+		end
+	end
+
+	def test_should_print_Buzz_instead_every_number_multiple_of_5
+		method do |item, index|
+			assert_match /^(Fizz)?Buzz$/, item, "Problem on index #{index}" if Helper.isDivisible(index, 5)
+		end
+	end
+
+	def test_should_print_FizzBuzz_instead_of_every_number_multiple_of_3_and_5
+		method do |item, index|
+			assert_equal 'FizzBuzz', item, "Problem on index #{index}" if Helper.isDivisibleByManyDivisors(index, 3, 5)
 		end
 	end
 
