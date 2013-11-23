@@ -11,7 +11,7 @@ class KataFizzBuzz
 				ret_string = 'Fizz'
 			end
 
-			if number.is_divisible?(5)
+			if number.is_divisible?(5) || number.has_digit?(5)
 				ret_string = ret_string.concat('Buzz')
 			end
 

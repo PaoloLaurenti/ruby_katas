@@ -54,6 +54,12 @@ class KataFizzBuzzTest < MiniTest::Test
 		end
 	end
 
+	def test_should_print_Buzz_instead_of_every_number_containing_5_digit
+		iterate_on_output do |item, index|
+			assert_item_is_Buzz(index, item) if index.has_digit?(5)
+		end
+	end
+
 	private
 
 	def capture_stdout(&block)
