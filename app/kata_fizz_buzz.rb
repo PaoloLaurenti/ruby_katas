@@ -1,15 +1,15 @@
-require_relative File.dirname(__FILE__) + '/helper'
+require_relative File.dirname(__FILE__) + '/Extensions/fix_num'
 
 class KataFizzBuzz
 	def printSequence
 		sequence = []
 
 		(1...100).each do |number|
-			if Helper.isDivisible(number, 3) && Helper.isDivisible(number, 5)
+			if number.is_divisible?(3) && number.is_divisible?(5)
 				sequence << 'FizzBuzz'
-			elsif Helper.isDivisible(number, 3)
+			elsif number.is_divisible?(3)
 				sequence << 'Fizz'
-			elsif Helper.isDivisible(number, 5)
+			elsif number.is_divisible?(5)
 				sequence << 'Buzz'
 			else
 				sequence << number
