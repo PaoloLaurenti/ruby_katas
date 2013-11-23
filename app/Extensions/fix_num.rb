@@ -1,11 +1,11 @@
 class Fixnum
-	def is_divisible? divisor
+	def is_divisible_by? divisor
 		self % divisor == 0
 	end
 
 	def is_divisible_by_many_divisors?(*divisors)
 		divisors.each do |divisor|
-			return unless self.is_divisible?(divisor)
+			return unless self.is_divisible_by?(divisor)
 		end
 
 		true
