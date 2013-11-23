@@ -5,7 +5,7 @@ require_relative '../app/kata_fizz_buzz'
 class KataFizzBuzzTest < MiniTest::Test
 	
 	def setup
-		kataFizzBuzz = KataFizzBuzz.new
+		kataFizzBuzz = KataFizzBuzz.new(1, 100)
 		@output = capture_stdout { kataFizzBuzz.printSequence }
 		@allowedWords = ['Fizz', 'Buzz', 'FizzBuzz']
 	end
