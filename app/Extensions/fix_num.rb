@@ -10,4 +10,8 @@ class Fixnum
 
 		true
 	end
+
+	def has_digit?(digit)
+		self.to_s.include? digit.to_s
+	end
 end

@@ -30,13 +30,13 @@ class KataFizzBuzzTest < MiniTest::Test
 		assert_equal 100, counter, 'The sequence from 1 to 100 is not respected'
 	end
 
-	def test_should_print_Fizz_instead_every_number_multiple_of_3
+	def test_should_print_Fizz_instead_of_every_number_multiple_of_3
 		iterate_on_output do |item, index|
 			assert_item_is_Fizz(index, item) if index.is_divisible?(3)
 		end
 	end
 
-	def test_should_print_Buzz_instead_every_number_multiple_of_5
+	def test_should_print_Buzz_instead_of_every_number_multiple_of_5
 		iterate_on_output do |item, index|
 			assert_item_is_Buzz(index, item) if index.is_divisible?(5)
 		end
@@ -45,6 +45,12 @@ class KataFizzBuzzTest < MiniTest::Test
 	def test_should_print_FizzBuzz_instead_of_every_number_multiple_of_3_and_5
 		iterate_on_output do |item, index|
 			assert_item_is_FizzBuzz(index, item) if index.is_divisible_by_many_divisors?(3, 5)
+		end
+	end
+
+	def test_should_print_Fizz_instead_of_every_number_containing_3_digit
+		iterate_on_output do |item, index|
+			assert_item_is_Fizz(index, item) if index.has_digit?(3)
 		end
 	end
 

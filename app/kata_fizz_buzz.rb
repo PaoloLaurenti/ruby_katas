@@ -5,15 +5,21 @@ class KataFizzBuzz
 		sequence = []
 
 		(1...100).each do |number|
-			if number.is_divisible?(3) && number.is_divisible?(5)
-				sequence << 'FizzBuzz'
-			elsif number.is_divisible?(3)
-				sequence << 'Fizz'
-			elsif number.is_divisible?(5)
-				sequence << 'Buzz'
-			else
-				sequence << number
+			ret_string = ''
+
+			if number.is_divisible?(3) || number.has_digit?(3)
+				ret_string = 'Fizz'
 			end
+
+			if number.is_divisible?(5)
+				ret_string = ret_string.concat('Buzz')
+			end
+
+			if ret_string == ''
+				ret_string = number
+			end
+
+			sequence << ret_string
 		end
 
 		print sequence.join(', ')
