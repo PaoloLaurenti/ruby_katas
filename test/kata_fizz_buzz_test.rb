@@ -81,7 +81,7 @@ class KataFizzBuzzTest < MiniTest::Test
 			index += 1
 		end
 
-		index
+		index - 1
 	end
 
 	def get_output_items

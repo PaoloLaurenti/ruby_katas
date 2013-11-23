@@ -11,7 +11,7 @@ class KataFizzBuzz
 	def printSequence
 		sequence = []
 
-		(@start_sequence...@end_sequence).each do |number|
+		(@start_sequence..@end_sequence).each do |number|
 
 			ret_string = ''
 

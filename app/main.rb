@@ -1,4 +1,4 @@
-require_relative File.dirname(__FILE__) + '/kata_fizz_buzz'
+require_relative 'kata_fizz_buzz'
 
-@kata = KataFizzBuzz.new
+@kata = KataFizzBuzz.new(1, 20)
 @kata.printSequence
