@@ -4,9 +4,11 @@ class RomanNumeral
   end
   
   def get_numbers
-    (1..2).each do |number|
+    (1..3).each do |number|
       @numbers << 'I' * number  
     end
+
+    @numbers << 'IV'
 
     @numbers
   end
