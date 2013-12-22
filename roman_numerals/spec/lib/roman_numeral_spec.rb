@@ -37,4 +37,20 @@ describe 'Converts firsts 3000 numbers from arabic format to roman' do
     expect(numbers[7]).to eq('VIII')
   end
 
+  it 'provides 9 as IX' do
+    expect(numbers[8]).to eq('IX')
+  end
+
+  it 'provides 10 as X' do
+    expect(numbers[9]).to eq('X')
+  end
+
+  it 'provides 11 as XI' do
+    expect(numbers[10]).to eq('XI')
+  end
+
+  it 'provides 12 as XII' do
+    expect(numbers[11]).to eq('XII')
+  end
+
 end  
