@@ -349,20 +349,40 @@ describe 'Roman numeral conversion' do
     expect(roman_numeral.convert(1003)).to eq('MIII')
   end
 
+  it 'provides MIII as 1003' do
+    expect(roman_numeral.convert_to_arabic('MIII')).to eq(1003)
+  end
+
   it 'provides 1999 as MCMXCIX' do
     expect(roman_numeral.convert(1999)).to eq('MCMXCIX')
+  end
+
+  it 'provides MCMXCIX as 1999' do
+    expect(roman_numeral.convert_to_arabic('MCMXCIX')).to eq(1999)
   end
 
   it 'provides 2000 as MM' do
     expect(roman_numeral.convert(2000)).to eq('MM')
   end
 
+  it 'provides MM as 2000' do
+    expect(roman_numeral.convert_to_arabic('MM')).to eq(2000)
+  end
+
   it 'provides 2999 as MMCMXCIX' do
     expect(roman_numeral.convert(2999)).to eq('MMCMXCIX')
   end
 
+  it 'provides MMCMXCIX as 2999' do
+    expect(roman_numeral.convert_to_arabic('MMCMXCIX')).to eq(2999)
+  end
+
   it 'provides 3000 as MMM' do
     expect(roman_numeral.convert(3000)).to eq('MMM')
+  end
+
+  it 'provides MMM as 3000' do
+    expect(roman_numeral.convert_to_arabic('MMM')).to eq(3000)
   end
 
 end  
