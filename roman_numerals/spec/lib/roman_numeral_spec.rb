@@ -41,24 +41,48 @@ describe 'Roman numeral conversion' do
     expect(roman_numeral.convert(5)).to eq('V')
   end
 
+  it 'provides V as 5' do
+    expect(roman_numeral.convert_to_arabic('V')).to eq(5)
+  end
+
   it 'provides 6 as VI' do
     expect(roman_numeral.convert(6)).to eq('VI')
+  end
+
+  it 'provides VI as 6' do
+    expect(roman_numeral.convert_to_arabic('VI')).to eq(6)
   end
 
   it 'provides 7 as VII' do
     expect(roman_numeral.convert(7)).to eq('VII')
   end
 
+  it 'provides VII as 7' do
+    expect(roman_numeral.convert_to_arabic('VII')).to eq(7)
+  end
+
   it 'provides 8 as VIII' do
     expect(roman_numeral.convert(8)).to eq('VIII')
+  end
+
+  it 'provides VIII as 8' do
+    expect(roman_numeral.convert_to_arabic('VIII')).to eq(8)
   end
 
   it 'provides 9 as IX' do
     expect(roman_numeral.convert(9)).to eq('IX')
   end
 
+  it 'provides IX as 9' do
+    expect(roman_numeral.convert_to_arabic('IX')).to eq(9)
+  end
+
   it 'provides 10 as X' do
     expect(roman_numeral.convert(10)).to eq('X')
+  end
+
+  it 'provides X as 10' do
+    expect(roman_numeral.convert_to_arabic('X')).to eq(10)
   end
 
   it 'provides 11 as XI' do
@@ -73,12 +97,24 @@ describe 'Roman numeral conversion' do
     expect(roman_numeral.convert(13)).to eq('XIII')
   end
 
+  it 'provides XIII as 13' do
+    expect(roman_numeral.convert_to_arabic('XIII')).to eq(13)
+  end
+
   it 'provides 14 as XIV' do
     expect(roman_numeral.convert(14)).to eq('XIV')
   end
 
+  it 'provides XIV as 14' do
+    expect(roman_numeral.convert_to_arabic('XIV')).to eq(14)
+  end
+
   it 'provides 15 as XV' do
     expect(roman_numeral.convert(15)).to eq('XV')
+  end
+
+  it 'provides XV as 15' do
+    expect(roman_numeral.convert_to_arabic('XV')).to eq(15)
   end
 
   it 'provides 16 as XVI' do
@@ -89,64 +125,128 @@ describe 'Roman numeral conversion' do
     expect(roman_numeral.convert(18)).to eq('XVIII')
   end
 
+  it 'provides XVIII as 18' do
+    expect(roman_numeral.convert_to_arabic('XVIII')).to eq(18)
+  end
+
   it 'provides 19 as XIX' do
     expect(roman_numeral.convert(19)).to eq('XIX')
+  end
+
+  it 'provides XIX as 19' do
+    expect(roman_numeral.convert_to_arabic('XIX')).to eq(19)
   end
 
   it 'provides 20 as XX' do
     expect(roman_numeral.convert(20)).to eq('XX')
   end
 
+  it 'provides XX as 20' do
+    expect(roman_numeral.convert_to_arabic('XX')).to eq(20)
+  end
+
   it 'provides 39 as XXXIX' do
     expect(roman_numeral.convert(39)).to eq('XXXIX')
+  end
+
+  it 'provides XXXIX as 39' do
+    expect(roman_numeral.convert_to_arabic('XXXIX')).to eq(39)
   end
 
   it 'provides 40 as XL' do
     expect(roman_numeral.convert(40)).to eq('XL')
   end
 
+  it 'provides XL as 40' do
+    expect(roman_numeral.convert_to_arabic('XL')).to eq(40)
+  end
+
   it 'provides 41 as XLI' do
     expect(roman_numeral.convert(41)).to eq('XLI')
+  end
+
+  it 'provides XLI as 41' do
+    expect(roman_numeral.convert_to_arabic('XLI')).to eq(41)
   end
 
   it 'provides 49 as XLIX' do
     expect(roman_numeral.convert(49)).to eq('XLIX')
   end
 
+  it 'provides XLIX as 49' do
+    expect(roman_numeral.convert_to_arabic('XLIX')).to eq(49)
+  end
+
   it 'provides 50 as L' do
     expect(roman_numeral.convert(50)).to eq('L')
+  end
+
+  it 'provides L as 50' do
+    expect(roman_numeral.convert_to_arabic('L')).to eq(50)
   end
 
   it 'provides 53 as LIII' do
     expect(roman_numeral.convert(53)).to eq('LIII')
   end
 
+  it 'provides LIII as 53' do
+    expect(roman_numeral.convert_to_arabic('LIII')).to eq(53)
+  end
+
   it 'provides 78 as LXXVIII' do
     expect(roman_numeral.convert(78)).to eq('LXXVIII')
+  end
+
+  it 'provides LXXVIII as 78' do
+    expect(roman_numeral.convert_to_arabic('LXXVIII')).to eq(78)
   end
 
   it 'provides 89 as LXXXIX' do
     expect(roman_numeral.convert(89)).to eq('LXXXIX')
   end
 
+  it 'provides LXXXIX as 89' do
+    expect(roman_numeral.convert_to_arabic('LXXXIX')).to eq(89)
+  end
+
   it 'provides 90 as XC' do
     expect(roman_numeral.convert(90)).to eq('XC')
+  end
+
+  it 'provides XC as 90' do
+    expect(roman_numeral.convert_to_arabic('XC')).to eq(90)
   end
 
   it 'provides 93 as XCIII' do
     expect(roman_numeral.convert(93)).to eq('XCIII')
   end
 
+  it 'provides XCIII as 93' do
+    expect(roman_numeral.convert_to_arabic('XCIII')).to eq(93)
+  end
+
   it 'provides 98 as XCVIII' do
     expect(roman_numeral.convert(98)).to eq('XCVIII')
+  end
+
+  it 'provides XCVIII as 98' do
+    expect(roman_numeral.convert_to_arabic('XCVIII')).to eq(98)
   end
 
   it 'provides 99 as XCIX' do
     expect(roman_numeral.convert(99)).to eq('XCIX')
   end
 
+  it 'provides XCIX as 99' do
+    expect(roman_numeral.convert_to_arabic('XCIX')).to eq(99)
+  end
+
   it 'provides 100 as C' do
     expect(roman_numeral.convert(100)).to eq('C')
+  end
+
+  it 'provides C as 100' do
+    expect(roman_numeral.convert_to_arabic('C')).to eq(100)
   end
 
   it 'provides 103 as CIII' do

@@ -15,7 +15,12 @@ class RomanNumeral
   end
 
   def convert_to_arabic(roman_number)
-    return roman_number.length if roman_number.chars.all? { |c| c == 'I'}
-    4
+    sorted_symbols_conversions = @first_level_symbols.sort_by { |range, roman_num| [-roman_num.length, -range.begin] }
+
+    sorted_symbols_conversions.each do |range, roman_num|
+      return range.begin + convert_to_arabic(roman_number[roman_num.length..-1]) if roman_number.start_with?(roman_num)
+    end
+    
+    0
   end
 end
