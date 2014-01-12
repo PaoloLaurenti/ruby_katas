@@ -9,16 +9,32 @@ describe 'Roman numeral conversion' do
     expect(roman_numeral.convert(1)).to eq('I')
   end
 
+  it 'provides I as 1' do
+    expect(roman_numeral.convert_to_arabic('I')).to eq(1)
+  end
+
   it 'provides 2 as II' do
     expect(roman_numeral.convert(2)).to eq('II')
+  end
+
+  it 'provides II as 2' do
+    expect(roman_numeral.convert_to_arabic('II')).to eq(2)
   end
 
   it 'provides 3 as III' do
     expect(roman_numeral.convert(3)).to eq('III')
   end
 
+  it 'provides III as 3' do
+    expect(roman_numeral.convert_to_arabic('III')).to eq(3)
+  end
+
   it 'provides 4 as IV' do
     expect(roman_numeral.convert(4)).to eq('IV')
+  end
+
+  it 'provides IV as 4' do
+    expect(roman_numeral.convert_to_arabic('IV')).to eq(4)
   end
 
   it 'provides 5 as V' do
