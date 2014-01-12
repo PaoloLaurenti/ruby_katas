@@ -309,20 +309,40 @@ describe 'Roman numeral conversion' do
     expect(roman_numeral.convert(503)).to eq('DIII')
   end
 
+  it 'provides DIII as 503' do
+    expect(roman_numeral.convert_to_arabic('DIII')).to eq(503)
+  end
+
   it 'provides 845 as DCCCXLV' do
     expect(roman_numeral.convert(845)).to eq('DCCCXLV')
+  end
+
+  it 'provides DCCCXLV as 845' do
+    expect(roman_numeral.convert_to_arabic('DCCCXLV')).to eq(845)
   end
 
   it 'provides 901 as CMI' do
     expect(roman_numeral.convert(901)).to eq('CMI')
   end
 
+  it 'provides CMI as 901' do
+    expect(roman_numeral.convert_to_arabic('CMI')).to eq(901)
+  end
+
   it 'provides 999 as CMXCIX' do
     expect(roman_numeral.convert(999)).to eq('CMXCIX')
   end
 
+  it 'provides CMXCIX as 999' do
+    expect(roman_numeral.convert_to_arabic('CMXCIX')).to eq(999)
+  end
+
   it 'provides 1000 as M' do
     expect(roman_numeral.convert(1000)).to eq('M')
+  end
+
+  it 'provides M as 1000' do
+    expect(roman_numeral.convert_to_arabic('M')).to eq(1000)
   end
 
   it 'provides 1003 as MIII' do
