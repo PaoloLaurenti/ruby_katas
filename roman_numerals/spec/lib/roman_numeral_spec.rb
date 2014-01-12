@@ -253,28 +253,56 @@ describe 'Roman numeral conversion' do
     expect(roman_numeral.convert(103)).to eq('CIII')
   end
 
+  it 'provides CIII as 103' do
+    expect(roman_numeral.convert_to_arabic('CIII')).to eq(103)
+  end
+
   it 'provides 149 as CXLIX' do
     expect(roman_numeral.convert(149)).to eq('CXLIX')
+  end
+
+  it 'provides CXLIX as 149' do
+    expect(roman_numeral.convert_to_arabic('CXLIX')).to eq(149)
   end
 
   it 'provides 199 as CXCIX' do
     expect(roman_numeral.convert(199)).to eq('CXCIX')
   end
 
+  it 'provides CXCIX as 199' do
+    expect(roman_numeral.convert_to_arabic('CXCIX')).to eq(199)
+  end
+
   it 'provides 399 as CCCXCIX' do
     expect(roman_numeral.convert(399)).to eq('CCCXCIX')
+  end
+
+  it 'provides CCCXCIX as 399' do
+    expect(roman_numeral.convert_to_arabic('CCCXCIX')).to eq(399)
   end
 
   it 'provides 400 as CD' do
     expect(roman_numeral.convert(400)).to eq('CD')
   end
 
+  it 'provides CD as 400' do
+    expect(roman_numeral.convert_to_arabic('CD')).to eq(400)
+  end
+
   it 'provides 499 as CDXCIX' do
     expect(roman_numeral.convert(499)).to eq('CDXCIX')
   end
 
+  it 'provides CDXCIX as 499' do
+    expect(roman_numeral.convert_to_arabic('CDXCIX')).to eq(499)
+  end
+
   it 'provides 500 as D' do
     expect(roman_numeral.convert(500)).to eq('D')
+  end
+
+  it 'provides D as 500' do
+    expect(roman_numeral.convert_to_arabic('D')).to eq(500)
   end
 
   it 'provides 503 as DIII' do
