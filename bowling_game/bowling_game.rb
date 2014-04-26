@@ -1,10 +1,18 @@
 class BowlingGame
 
+  def initialize
+    @score = 0
+  end
+
   def roll(pin)
+    @score += pin
   end
 
   def score()
-    0
+    @score
   end
+
+private
+  @score
 
 end
