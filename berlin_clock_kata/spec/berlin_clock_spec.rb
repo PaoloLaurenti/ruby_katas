@@ -11,7 +11,8 @@ describe 'Berlin Clock' do
     instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 00, 01, 04))
     @listener.should_receive('top_yellow_light_on')
 
-    berlin_clock = BerlinClock.new(instant_timer, @listener)
+    berlin_clock = BerlinClock.new(instant_timer)
+    berlin_clock.add_listener(@listener)
 
     berlin_clock.start
   end
@@ -20,7 +21,8 @@ describe 'Berlin Clock' do
     instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 00, 01, 13))
     @listener.should_receive('top_yellow_light_off')
 
-    berlin_clock = BerlinClock.new(instant_timer, @listener)
+    berlin_clock = BerlinClock.new(instant_timer)
+    berlin_clock.add_listener(@listener)
 
     berlin_clock.start
   end

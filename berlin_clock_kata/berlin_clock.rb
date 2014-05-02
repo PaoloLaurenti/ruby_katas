@@ -1,8 +1,12 @@
 class BerlinClock
 
-  def initialize(timer, listener)
+  def initialize(timer)
+    @listener = nil
+    @timer     = timer
+  end
+
+  def add_listener(listener)
     @listener = listener
-    @timer = timer
   end
 
   def start
