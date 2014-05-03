@@ -2,7 +2,7 @@ class BerlinClock
 
   def initialize(timer)
     @listener = nil
-    @timer     = timer
+    @timer    = timer
   end
 
   def add_listener(listener)
@@ -35,6 +35,5 @@ class BerlinClock
       @listener.eighth_red_light_off
     end
   end
-
 
 end

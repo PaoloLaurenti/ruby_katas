@@ -31,7 +31,7 @@ describe 'Berlin Clock' do
 
   it 'should turn off all the red lights of the first row when hours are less than five' do
     instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 04, 59, 59))
-    @expectation_helper.expect_all_red_lights_off
+    @expectation_helper.expect_all_first_rows_red_lights_off
     berlin_clock = @spec_helper.create_berlin_clock(instant_timer)
 
     berlin_clock.start
