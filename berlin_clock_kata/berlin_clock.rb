@@ -25,8 +25,8 @@ class BerlinClock
 
   def notify_red_lights(time)
     (time.hour < 5) ? @listener.first_red_light_off : @listener.first_red_light_on
+    (time.hour < 10) ? @listener.second_red_light_off : @listener.second_red_light_on
 
-    @listener.second_red_light_off
     @listener.third_red_light_off
     @listener.fourth_red_light_off
   end

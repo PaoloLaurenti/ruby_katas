@@ -45,9 +45,26 @@ describe 'Berlin Clock' do
     berlin_clock.start
   end
 
-  it 'should turn off all the first red lights except first, when hours are less than ten' do
+  it 'should turn off all the red lights except first, when hours are less than ten' do
     instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 9, 59, 59))
     @expectation_helper.expect_second_red_light_off
+    @expectation_helper.expect_third_red_light_off
+    @expectation_helper.expect_fourth_red_light_off
+    berlin_clock = @spec_helper.create_berlin_clock(instant_timer)
+
+    berlin_clock.start
+  end
+
+  it 'should turn on the second red light of the first row when hours are greater or equal than ten' do
+    instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 10, 0, 0))
+    @expectation_helper.expect_second_red_light_on
+    berlin_clock = @spec_helper.create_berlin_clock(instant_timer)
+
+    berlin_clock.start
+  end
+
+  it 'should turn off the third and fourth red lights, when hours are less than fifteen' do
+    instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 14, 59, 59))
     @expectation_helper.expect_third_red_light_off
     @expectation_helper.expect_fourth_red_light_off
     berlin_clock = @spec_helper.create_berlin_clock(instant_timer)
