@@ -71,5 +71,13 @@ describe 'Berlin Clock' do
 
     berlin_clock.start
   end
+
+  it 'should turn on the third red light of the first row when hours are greater or equal than fifteen' do
+    instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 15, 0, 0))
+    @expectation_helper.expect_third_red_light_on
+    berlin_clock = @spec_helper.create_berlin_clock(instant_timer)
+
+    berlin_clock.start
+  end
 end
 
