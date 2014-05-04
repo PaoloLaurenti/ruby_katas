@@ -48,6 +48,11 @@ class ExpectationHelper
     @listener.should_not_receive('fourth_red_light_on')
   end
 
+  def expect_fourth_red_light_on
+    @listener.should_receive('fourth_red_light_on')
+    @listener.should_not_receive('fourth_red_light_off')
+  end
+
   def expect_all_first_rows_red_lights_off
     expect_first_red_light_off
     expect_second_red_light_off

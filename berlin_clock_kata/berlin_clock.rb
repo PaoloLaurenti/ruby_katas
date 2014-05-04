@@ -27,8 +27,7 @@ class BerlinClock
     (time.hour < 5) ? @listener.first_red_light_off : @listener.first_red_light_on
     (time.hour < 10) ? @listener.second_red_light_off : @listener.second_red_light_on
     (time.hour < 15) ? @listener.third_red_light_off : @listener.third_red_light_on
-
-    @listener.fourth_red_light_off
+    (time.hour < 20) ? @listener.fourth_red_light_off : @listener.fourth_red_light_on
   end
 
 end
