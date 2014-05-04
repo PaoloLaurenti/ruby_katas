@@ -79,5 +79,13 @@ describe 'Berlin Clock' do
 
     berlin_clock.start
   end
+
+  it 'should turn off the fourth red light, when hours are less than twenty' do
+    instant_timer = InstantTimer.new(Time.gm(2014, 10, 3, 19, 59, 59))
+    @expectation_helper.expect_fourth_red_light_off
+    berlin_clock = @spec_helper.create_berlin_clock(instant_timer)
+
+    berlin_clock.start
+  end
 end
 
