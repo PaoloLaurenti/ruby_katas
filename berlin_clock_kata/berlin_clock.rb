@@ -1,7 +1,6 @@
 class BerlinClock
 
   def initialize(timer)
-    @listener = nil
     @timer    = timer
   end
 
